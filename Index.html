@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExNet-BF+PF</title>
+    
+    <meta name="description" content="Project Page for ExNet-BF+PF">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/fontawesome.all.min.css">
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+    
+    <link rel="stylesheet" href="css/fontawesome.all.min.css">
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">  
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'> -->
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+</head>
+
+<!-- 
+<head>
+  
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">    
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/audio-table.css">
+  <link rel="stylesheet" type="text/css" href="static/css/dropdown_style.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head> -->
+
+<body>
+
+  <div class="container">
+    
+    <div class="section-title text-center center">
+        <!--<h1 style="color:black"><strong><br><br> ExNet-BF+PF: Generating Speech from Silent Videos <br> Guided by Lip Reading</b><strong></h1> -->
+          <h1 style="color:black"><strong><br><br> ExNet-BF+PF: Explainable DNN-based Beamformer with Postfilter <br><strong></h1>
+        <br><br> 
+        <div class="publication-authors">
+            Adi Cohen,
+            Daniel Wong,
+            Jung-Suk Lee,
+            Sharon Gannot
+        </div>
+
+        <div class="button-container">
+            <a href="https://github.com/AdiCohen501/ExNet-BF-PF" class="link-wrap" target="_blank"> <!-- GitHub Link -->
+            <button class="special-button">
+                <i class="fab fa-github"></i>
+                GitHub
+            </button>
+        </a>
+        </div>
+
+
+
+        
+    </div>
+    <div class="column-center"> 
+        <img style="border:0px solid black;" src="img/ExNet_BF_PF_Net.png" alt="method" class="enlarge-above-other">
+        <br><br>
+    </div> 
+    <div class="row">
+      
+          <div class="col-md-10 col-md-offset-1">
+
+                <p style="color:black; font-family:Sans-Serif; font-size:16px">  
+                    This paper introduces an explainable DNN-based beamformer with a postfilter (ExNet-BF+PF) for 
+                    multichannel signal processing. Our approach combines the U-Net network with a beamformer 
+                    structure to address this problem. The method involves a two-stage processing pipeline. In the 
+                    first stage, time-invariant weights are applied to construct a multichannel spatial filter, 
+                    namely a beamformer. In the second stage, a time-varying single-channel post-filter is applied 
+                    at the beamformer output. Additionally, to further improve speech enhancement, we incorporate an 
+                    attention mechanism inspired by its successful application in noisy and reverberant environments.
+                    Furthermore, our study fills a gap in the existing literature by conducting a thorough spatial 
+                    analysis of the network's performance. Specifically, we examine how the network utilizes spatial 
+                    information during processing. This analysis yields valuable insights into the network's functionality, 
+                    thereby enhancing our understanding of its overall performance. 
+                    Experimental results demonstrate that our approach is not only straightforward to train but also 
+                    yields superior results, obviating the necessity for prior knowledge of the speaker's activity.
+                </p> <br><hr><br>
+      
+          </div>
+    </div>
+
+  </div>
+<!-- </div> -->
+
+  <!-- <div class="container">
+    <div class="section-title center">
+    
+    <p style="color:black; font-family:Sans-Serif; font-size:24px;"> LRS2 Dataset </p>
+    <br><br>  -->
+
+    <div class="inner">
+        <!-- <div class="section-title center"> -->
+    <div class="section-title text-center center">
+      <!-- <div class="col-md-20 col-md-offset--100"> -->
+    
+        <p style="color:black; font-family:Sans-Serif; font-size:24px;"> Non-Reverberant Environment </p>
+        <br><br>
+
+        <div style="width:1630px; margin:0 auto;">
+
+            <table border=0 justify="center" cellpadding="20px" style="width: 95%">
+                <tr>
+                <th style="background-color:white;position: sticky; top: 0;width: 10%; text-align: center; padding: 10px; color:black">Type</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Ground-Truth</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">ExNet-BF+PF (Ours) </th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">SC</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">CUNET</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">UNET</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR+PF</th>
+                </tr>
+
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Standard </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                       <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+
+                        <audio id="audioPlayer">
+                            <source src="Time_Varying_Noise/rec/Input.wav" type="audio/wav">
+                        </audio>
+
+                        <script>
+                            function playAudio() { 
+                                var audio = document.getElementById("audioPlayer");
+                                audio.play();
+                            }
+                        </script>
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                         <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Time-Varying Noise </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                       <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                         <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Speaker Switch </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                       <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                         <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Babble Noise </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                       <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                         <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Babble Voice </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                       <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                        <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                         <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+
+    <br><br><br>
+    <p style="color:black; font-family:Sans-Serif; font-size:24px;"> Reverberant Environment </p>
+    <br><br>
+
+    <div style="width:1630px; margin:0 auto;">
+
+        <table border=0 justify="center" cellpadding="20px" style="width: 95%">
+            <tr>
+            <th style="background-color:white;position: sticky; top: 0;width: 10%; text-align: center; padding: 10px; color:black">Type</th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Ground-Truth</th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">ExNet-BF+PF (Ours) </th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">SC</th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">CUNET</th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">UNET</th>
+            <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR+PF</th>
+            </tr>
+
+
+            <tr>
+                <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                    <p class="plain-text">Standard </p>
+                </td>
+                        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                   <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+
+                    <audio id="audioPlayer">
+                        <source src="Time_Varying_Noise/rec/Input.wav" type="audio/wav">
+                    </audio>
+
+                    <script>
+                        function playAudio() { 
+                            var audio = document.getElementById("audioPlayer");
+                            audio.play();
+                        }
+                    </script>
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+                 <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                     <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                    <p class="plain-text">Time-Varying Noise </p>
+                </td>
+                        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                   <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+                 <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                     <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+            </tr>
+
+                            <tr>
+                <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                    <p class="plain-text">Speaker Switch </p>
+                </td>
+                        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                   <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+                 <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                     <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+            </tr>
+
+                            <tr>
+                <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                    <p class="plain-text">Babble Noise </p>
+                </td>
+                        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                   <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+                 <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                     <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+            </tr>
+
+                            <tr>
+                <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                    <p class="plain-text">Babble Voice </p>
+                </td>
+                        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                   <img src="Time_Varying_Noise/spec/output_Input.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/Net.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_Net.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/SC.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_SC.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/CUNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_CUNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+        
+                <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/UNET.wav" type="audio/wav"></audio>
+                    <img src="Time_Varying_Noise/spec/output_UNET.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+                 <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                    <audio width="250" controls><source src="Time_Varying_Noise/rec/MVDR.wav" type="audio/wav"></audio>
+                     <img src="Time_Varying_Noise/spec/output_MVDR.png" class="audio-image" onclick="playAudio()"
+                    style="display: block; margin: 10px auto;" height="200">
+                </td>
+            </tr>
+
+
+        </table>
+    </div>    
+
+</div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
