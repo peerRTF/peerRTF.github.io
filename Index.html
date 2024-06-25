@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ExNet-BF+PF</title>
+    <title>peerRTF</title>
     
-    <meta name="description" content="Project Page for ExNet-BF+PF">
+    <meta name="description" content="Project Page for peerRTF">
     <meta name="author" content="">
 
     <link rel="stylesheet" href="css/fontawesome.all.min.css">
@@ -52,18 +52,17 @@
   <div class="container">
     
     <div class="section-title text-center center">
-        <!--<h1 style="color:black"><strong><br><br> ExNet-BF+PF: Generating Speech from Silent Videos <br> Guided by Lip Reading</b><strong></h1> -->
-          <h1 style="color:black"><strong><br><br> ExNet-BF+PF: Explainable DNN-based Beamformer with Postfilter <br><strong></h1>
+        <!--<h1 style="color:black"><strong><br><br> peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network <br> </b><strong></h1> -->
+          <h1 style="color:black"><strong><br><br> peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network <br><strong></h1>
         <br><br> 
         <div class="publication-authors">
-            Adi Cohen,
-            Daniel Wong,
-            Jung-Suk Lee,
+            Daniel Levi,
+            Amit Sofer,
             Sharon Gannot
         </div>
 
         <div class="button-container">
-            <a href="https://github.com/AdiCohen501/ExNet-BF-PF" class="link-wrap" target="_blank"> <!-- GitHub Link -->
+            <a href="https://https://github.com/levidaniel96/peerRTFs" class="link-wrap" target="_blank"> <!-- GitHub Link -->
             <button class="special-button">
                 <i class="fab fa-github"></i>
                 GitHub
@@ -76,7 +75,7 @@
         
     </div>
     <div class="column-center"> 
-        <img style="border:0px solid black;" src="img/ExNet_BF_PF_Net.png" alt="method" class="enlarge-above-other">
+        <img style="border:0px solid black;" src="img/Block_diagram.png" alt="method" class="enlarge-above-other">
         <br><br>
     </div> 
     <div class="row">
@@ -84,19 +83,15 @@
           <div class="col-md-10 col-md-offset-1">
 
                 <p style="color:black; font-family:Sans-Serif; font-size:16px">  
-                    This paper introduces an explainable DNN-based beamformer with a postfilter (ExNet-BF+PF) for 
-                    multichannel signal processing. Our approach combines the U-Net network with a beamformer 
-                    structure to address this problem. The method involves a two-stage processing pipeline. In the 
-                    first stage, time-invariant weights are applied to construct a multichannel spatial filter, 
-                    namely a beamformer. In the second stage, a time-varying single-channel post-filter is applied 
-                    at the beamformer output. Additionally, to further improve speech enhancement, we incorporate an 
-                    attention mechanism inspired by its successful application in noisy and reverberant environments.
-                    Furthermore, our study fills a gap in the existing literature by conducting a thorough spatial 
-                    analysis of the network's performance. Specifically, we examine how the network utilizes spatial 
-                    information during processing. This analysis yields valuable insights into the network's functionality, 
-                    thereby enhancing our understanding of its overall performance. 
-                    Experimental results demonstrate that our approach is not only straightforward to train but also 
-                    yields superior results, obviating the necessity for prior knowledge of the speaker's activity.
+                    This paper introduces a novel method for accurately and reliably identifying the relative transfer functions (RTFs)
+                    between microphones in relation to a desired source, which is crucial for the design of microphone array beamformers.
+                    Accurate RTF estimation is particularly challenging in noisy and reverberant environments. To address this, the
+                    proposed method leverages prior knowledge of the acoustic environment to enhance the robustness of RTF estimation
+                    by learning the RTF manifold. The key innovation of this work is the use of a graph convolutional network (GCN)
+                    to learn and infer a robust representation of the RTFs within a confined area. This approach is tested and trained
+                    using real recordings, demonstrating its effectiveness in improving beamformer performance by providing a more
+                    reliable RTF estimation in complex acoustic settings.
+
                 </p> <br><hr><br>
       
           </div>
@@ -116,7 +111,7 @@
     <div class="section-title text-center center">
       <!-- <div class="col-md-20 col-md-offset--100"> -->
     
-        <p style="color:black; font-family:Sans-Serif; font-size:24px;"> Non-Reverberant Environment </p>
+        <p style="color:black; font-family:Sans-Serif; font-size:24px;"> 100ms </p>
         <br><br>
 
         <div style="width:1630px; margin:0 auto;">
