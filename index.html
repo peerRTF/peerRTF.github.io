@@ -211,7 +211,254 @@
             </table>
         </div>
 
+        <p style="color:black; font-family:Sans-Serif; font-size:24px;">Reverberation time =300ms </p>
+        <br><br>
 
+        <div class="center">
+        <table border="0" cellpadding="20px">
+                <tr>
+                <th style="background-color:white;position: sticky; top: 0;width: 10%; text-align: center; padding: 10px; color:black">SNR level</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Input</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">peerRTF (Ours) </th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (GEVD)</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (Oracle)</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (MP)</th>
+                </tr>
+
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=-10[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/m10/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/m10/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/m10/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/m10/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/m10/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/m10/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/m10/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/m10/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/m10/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/m10/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=2[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/2/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/2/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/2/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/2/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/2/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/2/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/2/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/2/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/2/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/2/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=10[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/10/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/10/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/10/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/10/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/10/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/10/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/10/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/10/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/10/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/10/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+                <p style="color:black; font-family:Sans-Serif; font-size:24px;">Reverberation time =100ms </p>
+        <br><br>
+
+        <div class="center">
+        <table border="0" cellpadding="20px">
+                <tr>
+                <th style="background-color:white;position: sticky; top: 0;width: 10%; text-align: center; padding: 10px; color:black">SNR level</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Input</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">peerRTF (Ours) </th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (GEVD)</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (Oracle)</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">MVDR (MP)</th>
+                </tr>
+
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=-10[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/m10/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/m10/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/m10/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/m10/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/100ms/m10/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=2[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/2/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/2/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/2/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/2/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/2/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/2/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/2/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/2/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/2/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/100ms/2/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">SNR=10[dB] </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/10/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/10/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/10/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/10/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/10/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/10/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/10/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/100ms/10/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/10/MP.wav" type="audio/wav"></audio>
+                         <img src="examples/100ms/10/MP.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+                </tr>
+            </table>
+        </div>
 
 </div>
 </div>
