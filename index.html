@@ -59,14 +59,11 @@
           <div class="col-md-10 col-md-offset-1 text-center center">
 
                 <p style="color:black; font-family:Sans-Serif; font-size:16px">  
-                    This paper introduces a novel method for accurately and reliably identifying the relative transfer functions (RTFs)
-                    between microphones in relation to a desired source, which is crucial for the design of microphone array beamformers.
-                    Accurate RTF estimation is particularly challenging in noisy and reverberant environments. To address this, the
-                    proposed method leverages prior knowledge of the acoustic environment to enhance the robustness of RTF estimation
-                    by learning the RTF manifold. The key innovation of this work is the use of a graph convolutional network (GCN)
-                    to learn and infer a robust representation of the RTFs within a confined area. This approach is tested and trained
-                    using real recordings, demonstrating its effectiveness in improving beamformer performance by providing a more
-                    reliable RTF estimation in complex acoustic settings.
+This paper introduces a novel method for accurately and robustly estimating relative transfer functions (RTFs), which is crucial for designing microphone array beamformers. Accurate RTF estimation is particularly challenging in noisy and reverberant environments. To address this, the proposed method leverages prior knowledge of the acoustic environment to enhance RTF estimation robustness by learning the RTF manifold.
+
+The key innovation of this work is the use of a graph convolutional network (GCN) to learn and infer a robust representation of the RTFs within a confined area. This approach is tested and trained using real recordings, demonstrating its effectiveness in improving beamformer performance by providing more reliable RTF estimation in complex acoustic settings.
+
+All audio examples are computed after applying the MVDR (Minimum Variance Distortionless Response) beamformer with the RTFs obtained from each method to produce the enhanced signal.
 
                 </p> <br><hr><br>
       
