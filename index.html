@@ -572,6 +572,155 @@ All audio examples are computed after applying the MVDR (Minimum Variance Distor
             </table>
         </div>
 
+
+
+                <p style="color:black; font-family:Sans-Serif; font-size:24px;">special Noises </p>
+        <br><br>
+
+        <div class="center">
+        <table border="0" cellpadding="20px">
+                <tr>
+                <th style="background-color:white;position: sticky; top: 0;width: 10%; text-align: center; padding: 10px; color:black">noise type</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Input</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">peerRTF (Ours) </th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">GEVD</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">Oracle</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">meanGrid</th>
+                <th style="background-color:white;position: sticky; top: 0;width: 20%; text-align: center; padding: 10px; color:black">COG</th>
+                </tr>
+
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Car Noise </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/carNoise/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/100ms/m10/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/carNoise/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/carNoise/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/carNoise/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/carNoise/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/carNoise/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/carNoise/meanGrid.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/carNoise/meanGrid.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/carNoise/COG.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/carNoise/COG.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                     
+                     </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Factory Noise </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/FactoryNoise/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/FactoryNoise/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/FactoryNoise/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/FactoryNoise/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/meanGrid.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/FactoryNoise/meanGrid.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/FactoryNoise/COG.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/FactoryNoise/COG.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                
+                
+                </tr>
+
+                    <td style="width: 10%; text-align: center; padding: 10px; color:black">
+                        <p class="plain-text">Room Noise </p>
+                    </td>
+                            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/Input.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/RoomNoise/Input.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/GCN.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/RoomNoise/GCN.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/GEVD.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/RoomNoise/GEVD.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+            
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/Oracle.wav" type="audio/wav"></audio>
+                        <img src="examples/300ms/RoomNoise/Oracle.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                        
+                    </td>
+
+                    <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/meanGrid.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/RoomNoise/meanGrid.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                    </td>
+
+                     <td style="width: 20%; text-align: center; padding: 10px; color:black">
+                        <audio width="250" controls><source src="examples/300ms/RoomNoise/COG.wav" type="audio/wav"></audio>
+                         <img src="examples/300ms/RoomNoise/COG.png" class="audio-image" onclick="playAudio()"
+                        style="display: block; margin: 10px auto;" height="200">
+                </tr>
+            </table>
+        </div>
+
+
+
+        
 </div>
 </div>
 
